@@ -63,10 +63,14 @@ export default function App() {
             {item.marcado && <Text style={{color:"yellow"}}> ☆☆☆ </Text>}
             </Text>
           
-            <Button
-              title="Marcar"
-              onPress={ () => marcarUsuario(item.id) }  
-            />
+            <View style={{backgroundColor: '#E0FFFF'}}>
+              <View style={{flex:1 , marginRight:10}}>
+                <Button
+                  title="Marcar"
+                  onPress={ () => marcarUsuario(item.id) }  
+                />
+              </View>
+            </View>
             
           </View>
         )}
