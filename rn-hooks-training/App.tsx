@@ -1,39 +1,30 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
-export default class App extends Component {
+export default function App() {
 
-  constructor(props) {
-    super(props);
-    this.state=({
-      contar: 0
-    })
+  const [contar, setContar] = useState(0);
+
+  function increment() {
+    setContar(contar + 1);
   }
 
-  increment = () => {
-    this.setState({
-      contar: this.state.contar +1
-    })
-  }
-
-  render() {
     return (
       <View style={styles.container}>
 
         <Button
-          onPress={this.increment}
+          onPress={increment}
           title="Contar"  
         />
 
         <Text>
           style={{color: '#FFF', fontSize:16, marginTop: 10}}
         >
-          {this.state.contar}
+          {contar}
         </Text>
 
       </View>
     )
-  }
 
 }
 
